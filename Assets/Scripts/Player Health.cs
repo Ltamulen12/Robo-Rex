@@ -4,6 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int health = 2; // Starting health
     public float fallThreshold = -10f; // Y position threshold to detect falling off the map
+    private bool isGameOver = false; // Track whether the game is over
 
     void Update()
     {
@@ -11,6 +12,12 @@ public class PlayerHealth : MonoBehaviour
         if (transform.position.y < fallThreshold)
         {
             Die();
+        }
+
+        // Check if the Escape key is pressed after the player dies
+        if (isGameOver && Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
         }
     }
 
@@ -30,6 +37,14 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player Died!");
         Time.timeScale = 0; // Freeze the game
+        isGameOver = true; // Set game over state
+    }
+
+    // Quit the game
+    private void QuitGame()
+    {
+        Debug.Log("Quitting game...");
+        Application.Quit(); // Close the application
     }
 
     // Detect collision with an enemy
