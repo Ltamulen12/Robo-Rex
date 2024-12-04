@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1098073392152611993
+--- !u!1 &1709398270967777949
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,73 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7006851159339661768}
-  - component: {fileID: 881866849319498848}
-  - component: {fileID: 3451837191384332462}
-  - component: {fileID: 7638448701826585355}
-  - component: {fileID: -1454729453909760069}
-  m_Layer: 3
-  m_Name: 'Laser '
+  - component: {fileID: 4574452610828848002}
+  m_Layer: 0
+  m_Name: Bullet Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7006851159339661768
+--- !u!4 &4574452610828848002
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098073392152611993}
+  m_GameObject: {fileID: 1709398270967777949}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.66, y: -2.54, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.42, y: -0.04, z: 0.019453697}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 1535166993288188011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8870289139539682327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1535166993288188011}
+  - component: {fileID: 2211650019070652452}
+  - component: {fileID: 2237051686008867493}
+  - component: {fileID: 7261396719777486196}
+  - component: {fileID: 6060555926945655237}
+  - component: {fileID: -5812603108767260522}
+  m_Layer: 0
+  m_Name: Dino
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1535166993288188011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870289139539682327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.2589326, y: -2.6, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4574452610828848002}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &881866849319498848
+--- !u!212 &2211650019070652452
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098073392152611993}
+  m_GameObject: {fileID: 8870289139539682327}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,24 +109,24 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ae36ec763cc18455792e7e4515155158, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba052c56aae9c422b96737a735864305, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.96, y: 0.73}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3451837191384332462
+--- !u!61 &2237051686008867493
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098073392152611993}
+  m_GameObject: {fileID: 8870289139539682327}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -119,27 +152,27 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03480482, y: -0.08701211}
+  m_Offset: {x: 0.0609082, y: -0.03480482}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.73}
-    newSize: {x: 0.96, y: 0.73}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3335123, y: 0.13831747}
+  m_Size: {x: 0.5665009, y: 0.72312236}
   m_EdgeRadius: 0
---- !u!50 &7638448701826585355
+--- !u!50 &7261396719777486196
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098073392152611993}
+  m_GameObject: {fileID: 8870289139539682327}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -159,17 +192,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-1454729453909760069
+--- !u!114 &6060555926945655237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098073392152611993}
+  m_GameObject: {fileID: 8870289139539682327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5814663e7b701429ea1cc06ff7b04f92, type: 3}
+  m_Script: {fileID: 11500000, guid: 7246042512b4545698bf61aa2f4882bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifespan: 5
-  damage: 1
+  horizontalInput: 0
+  maxSpeed: 5
+  jumpHeight: 6.5
+  gravityScale: 1
+  fireRate: 5
+  projectilePrefab: {fileID: 1098073392152611993, guid: da7c1339eabee466ab201b3df86ca062, type: 3}
+  projectileSpeed: 15
+--- !u!114 &-5812603108767260522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870289139539682327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c03539e33cc64687908b634a596bc01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts: []
+  health: 2
+  playerSprite: {fileID: 0}
+  invincibilityDurationSeconds: 1
+  delayBetweenInvincibilityFlashes: 1
+  gameOverPanel: {fileID: 0}
+  fallThreshold: -10

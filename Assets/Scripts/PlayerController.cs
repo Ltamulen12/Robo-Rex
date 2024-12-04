@@ -21,9 +21,6 @@ public class PlayerController : MonoBehaviour
     private float lastShotTime = 0f; // Time of the last shot
     private Vector2 shootDirection = Vector2.right;
 
-    // Portal tracking for single player
-    private static bool playerInPortal = false;
-
     #region Singleton
     public static PlayerController instance;
 
