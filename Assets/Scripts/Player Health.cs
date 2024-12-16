@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public int health; // Current health
     public SpriteRenderer playerSprite; // Reference to the player's sprite renderer
     public GameObject gameOverPanel; // Reference to the Game Over UI panel
+    public GameObject youWinPanel; // Reference to the You Win UI panel
     public float fallThreshold = -10f; // Y position threshold to detect falling off the map
 
     void Start()
@@ -18,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
         // Initialize the game state
         Time.timeScale = 1f;
         gameOverPanel.SetActive(false); // Hide the Game Over panel at the start
+        youWinPanel.SetActive(false); // Hide the You Win panel at the start
         health = maxHealth; // Set the player's health to the maximum
         UpdateHearts(); // Update the heart UI
     }
@@ -31,12 +33,16 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // Detect collision with an enemy
+    // Detect collision with objects
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(1); // Lose 1 health when colliding with an enemy
+        }
+        else if (collision.gameObject.CompareTag("YouWin"))
+        {
+            ShowYouWinPanel(); // Show the You Win panel when colliding with a YouWin object
         }
     }
 
@@ -71,6 +77,14 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player Died!");
         gameOverPanel.SetActive(true); // Show the Game Over panel
+        Time.timeScale = 0; // Pause the game
+    }
+
+    // Show the You Win panel and pause the game
+    private void ShowYouWinPanel()
+    {
+        Debug.Log("You Win!");
+        youWinPanel.SetActive(true); // Show the You Win panel
         Time.timeScale = 0; // Pause the game
     }
 
