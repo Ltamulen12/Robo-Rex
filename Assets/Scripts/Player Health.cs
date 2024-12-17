@@ -78,7 +78,12 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Player Died!");
         gameOverPanel.SetActive(true); // Show the Game Over panel
         Time.timeScale = 0; // Pause the game
+
+        // Unlock the cursor so the player can click on UI buttons
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
+
 
     // Show the You Win panel and pause the game
     private void ShowYouWinPanel()
